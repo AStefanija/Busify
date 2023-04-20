@@ -15,8 +15,19 @@ on:
     branches: [ "master" ]
 
 permissions:
-  contents: read
-  pull-requests: write
+  actions: read|write
+  checks: read|write
+  contents: read|write
+  deployments: read|write
+  id-token: read|write
+  issues: read|write
+  discussions: read|write
+  packages: read|write
+  pages: read|write
+  pull-requests: read|write
+  repository-projects: read|write
+  security-events: read|write
+  statuses: read|write
 
 jobs:
   build:
