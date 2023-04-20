@@ -1,26 +1,31 @@
 package com.busify.busifyappproject.model;
 
-import javax.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 
 @Entity
 @Table(name = "Tour")
+@NoArgsConstructor
+@Builder
+@Data
 public class Tour {
 
-    public Tour() {
-    }
-
-    public Tour(int id, Driver driver, LocalDate date, TourStatus status, Route route) {
-        this.id = id;
-        this.driver = driver;
-        this.date = date;
-        this.status = status;
-        this.route = route;
-    }
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Tour")
     private int id;
 
@@ -38,44 +43,4 @@ public class Tour {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_Route")
     private Route route;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public TourStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(TourStatus status) {
-        this.status = status;
-    }
-
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(Route route) {
-        this.route = route;
-    }
 }

@@ -1,24 +1,30 @@
 package com.busify.busifyappproject.model;
 
-import javax.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "Baggage")
+@NoArgsConstructor
+@Builder
+@Data
 public class Baggage {
 
-    public Baggage() {
-    }
-
-    public Baggage(int id, Ticket ticket, float weight, float size, BaggageType type) {
-        this.id = id;
-        this.ticket = ticket;
-        this.weight = weight;
-        this.size = size;
-        this.type = type;
-    }
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Baggage")
     private int id;
 
@@ -35,44 +41,4 @@ public class Baggage {
     @Enumerated
     @Column(name = "Type")
     private BaggageType type;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Ticket getTicket() {
-        return ticket;
-    }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
-
-    public float getWeight() {
-        return weight;
-    }
-
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
-
-    public float getSize() {
-        return size;
-    }
-
-    public void setSize(float size) {
-        this.size = size;
-    }
-
-    public BaggageType getType() {
-        return type;
-    }
-
-    public void setType(BaggageType type) {
-        this.type = type;
-    }
 }

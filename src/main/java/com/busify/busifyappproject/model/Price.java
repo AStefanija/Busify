@@ -1,24 +1,29 @@
 package com.busify.busifyappproject.model;
 
-import javax.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "Price")
+@NoArgsConstructor
+@Builder
+@Data
 public class Price {
 
-    public Price() {
-    }
-
-    public Price(int id, Bus_Stop start_bus_stop, Bus_Stop end_bus_stop, float price) {
-        this.id = id;
-        this.start_bus_stop = start_bus_stop;
-        this.end_bus_stop = end_bus_stop;
-        this.price = price;
-    }
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Price")
     private int id;
 
@@ -32,36 +37,4 @@ public class Price {
 
     @Column(name = "Price")
     private float price;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Bus_Stop getStart_bus_stop() {
-        return start_bus_stop;
-    }
-
-    public void setStart_bus_stop(Bus_Stop start_bus_stop) {
-        this.start_bus_stop = start_bus_stop;
-    }
-
-    public Bus_Stop getEnd_bus_stop() {
-        return end_bus_stop;
-    }
-
-    public void setEnd_bus_stop(Bus_Stop end_bus_stop) {
-        this.end_bus_stop = end_bus_stop;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
 }

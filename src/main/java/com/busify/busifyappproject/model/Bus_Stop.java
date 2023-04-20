@@ -1,23 +1,30 @@
 package com.busify.busifyappproject.model;
 
-import javax.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "Bus_Stop")
+@NoArgsConstructor
+@Builder
+@Data
 public class Bus_Stop {
 
-    public Bus_Stop() {
-    }
-
-    public Bus_Stop(int id, Route route, String city) {
-        this.id = id;
-        this.route = route;
-        this.city = city;
-    }
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Bus_Stop")
     private int id;
 
@@ -27,28 +34,4 @@ public class Bus_Stop {
 
     @Column(name = "City")
     private String city;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(Route route) {
-        this.route = route;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 }

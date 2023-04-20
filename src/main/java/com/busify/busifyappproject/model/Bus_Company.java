@@ -1,23 +1,30 @@
 package com.busify.busifyappproject.model;
 
-import javax.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "Bus_Company")
+@NoArgsConstructor
+@Builder
+@Data
 public class Bus_Company {
 
-    public Bus_Company() {
-    }
-
-    public Bus_Company(int id, Company company, int number_of_buses) {
-        this.id = id;
-        this.company = company;
-        this.number_of_buses = number_of_buses;
-    }
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Bus_Company")
     private int id;
 
@@ -28,27 +35,4 @@ public class Bus_Company {
     @Column(name = "Number_Of_Buses")
     private int number_of_buses;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public int getNumber_of_buses() {
-        return number_of_buses;
-    }
-
-    public void setNumber_of_buses(int number_of_buses) {
-        this.number_of_buses = number_of_buses;
-    }
 }

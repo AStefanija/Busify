@@ -1,25 +1,29 @@
 package com.busify.busifyappproject.model;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "Ticket")
+@NoArgsConstructor
+@Builder
+@Data
 public class Ticket {
 
-    public Ticket() {
-    }
-
-    public Ticket(int id, Passenger passenger, Price price, int seat) {
-        this.id = id;
-        this.passenger = passenger;
-        this.price = price;
-        this.seat = seat;
-    }
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Ticket")
     private int id;
 
@@ -33,36 +37,4 @@ public class Ticket {
 
     @Column(name = "Seat")
     private int seat;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Passenger getPassenger() {
-        return passenger;
-    }
-
-    public void setPassenger(Passenger passenger) {
-        this.passenger = passenger;
-    }
-
-    public Price getPrice() {
-        return price;
-    }
-
-    public void setPrice(Price price) {
-        this.price = price;
-    }
-
-    public int getSeat() {
-        return seat;
-    }
-
-    public void setSeat(int seat) {
-        this.seat = seat;
-    }
 }

@@ -1,25 +1,26 @@
 package com.busify.busifyappproject.model;
 
-import javax.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "Company")
+@NoArgsConstructor
+@Builder
+@Data
 public class Company {
 
-    public Company() {
-    }
-
-    public Company(int id, String name, String address, LocalDate date_of_establishment, int number_of_employees) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.date_of_establishment = date_of_establishment;
-        this.number_of_employees = number_of_employees;
-    }
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Company")
     private int id;
 
@@ -34,44 +35,4 @@ public class Company {
 
     @Column(name = "Number_Of_Employees")
     private int number_of_employees;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public LocalDate getDate_of_establishment() {
-        return date_of_establishment;
-    }
-
-    public void setDate_of_establishment(LocalDate date_of_establishment) {
-        this.date_of_establishment = date_of_establishment;
-    }
-
-    public int getNumber_of_employees() {
-        return number_of_employees;
-    }
-
-    public void setNumber_of_employees(int number_of_employees) {
-        this.number_of_employees = number_of_employees;
-    }
 }
