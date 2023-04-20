@@ -19,8 +19,8 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "Route")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class Route {
 

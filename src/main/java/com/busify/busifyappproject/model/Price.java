@@ -18,8 +18,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Price")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class Price {
 

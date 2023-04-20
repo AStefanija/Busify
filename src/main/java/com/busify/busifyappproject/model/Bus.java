@@ -19,8 +19,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Bus")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class Bus {
 

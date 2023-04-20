@@ -18,8 +18,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Ticket")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class Ticket {
 

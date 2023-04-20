@@ -20,8 +20,8 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "Invoice")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class Invoice {
 

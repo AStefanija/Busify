@@ -16,8 +16,8 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "User")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class User {
 

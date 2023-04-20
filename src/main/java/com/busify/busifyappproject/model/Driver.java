@@ -19,8 +19,8 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "Driver")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class Driver {
 

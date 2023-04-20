@@ -20,8 +20,8 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "Tour")
+@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
 public class Tour {
 
