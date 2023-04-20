@@ -1,5 +1,6 @@
 package com.busify.busifyappproject.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,7 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "Invoice")
-@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Data
 public class Invoice {
