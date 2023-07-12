@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: Swagger Busify - OpenAPI 3.0
+  version: 1.0.11
+servers:
+  - url: http://localhost/8080
+paths:
+  /getFutureUserTickets:
+    post:
+      summary: Get future user tickets
+      description: Retrieve future tickets for a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetFutureUserTicketsRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserTicketsResponse'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    GetFutureUserTicketsRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+          example: '8491'
+    GetUserTicketsResponse:
+      type: object
+      properties:
+        tickets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ticket'
+    Ticket:
+      type: object
+      properties:
+        ID_Ticket:
+          type: integer
+        ID_Passenger:
+          type: integer
+        ID_User:
+          type: integer
+        First_Name:
+          type: string
+        Last_Name:
+          type: string
+        start_city:
+          type: string
+        end_city:
+          type: string
+        ticket_price:
+          type: string
+        Seat:
+          type: integer
+        Type:
+          type: string
+        ID_Route:
+          type: integer
+        company_name:
+          type: string
+        Departure_Time:
+          type: string
+        Arrival_Time:
+          type: string
+        Tour_Date:
+          type: string
+          format: date-time
+          example: '2023-07-06T22:00:00.00Z'

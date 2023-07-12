@@ -17,8 +17,8 @@
     <modules>
         <module>busify-domain</module>
         <module>busify-app</module>
-        <module>busify-web</module>
         <module>busify-service</module>
+        <module>busify-messages</module>
     </modules>
     <properties>
         <java.version>17</java.version>
