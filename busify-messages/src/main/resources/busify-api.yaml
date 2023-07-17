@@ -7,6 +7,8 @@ servers:
 paths:
   /getFutureUserTickets:
     post:
+      tags:
+        - tickets
       summary: Get future user tickets
       description: Retrieve future tickets for a user
       requestBody:
@@ -26,6 +28,29 @@ paths:
           description: Bad Request
         '401':
           description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /addBaggage:
+    post:
+      tags:
+        - baggage
+      summary: Add baggage
+      description: Add baggage to a ticket
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddBaggageRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddBaggageResponse'
+        '400':
+          description: Bad Request
         '500':
           description: Internal Server Error
 components:
@@ -78,3 +103,24 @@ components:
           type: string
           format: date-time
           example: '2023-07-06T22:00:00.00Z'
+    AddBaggageRequest:
+      type: object
+      properties:
+        ticketID:
+          type: integer
+          example: 6069
+        weight:
+          type: number
+          example: 40
+        size:
+          type: number
+          example: 30
+        baggage-Type:
+          type: string
+          example: 'Carry-on Bag'
+    AddBaggageResponse:
+      type: object
+      properties:
+        baggageId:
+          type: integer
+          example: 1
