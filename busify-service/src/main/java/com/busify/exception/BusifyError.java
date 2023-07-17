@@ -7,7 +7,8 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 @Getter
 public enum BusifyError {
-    USER_NOT_FOUND(HttpStatus.BAD_REQUEST);
+    USER_NOT_FOUND(HttpStatus.BAD_REQUEST),
+    TICKET_NOT_FOUND(HttpStatus.BAD_REQUEST);
 
     private final HttpStatus httpStatus;
 }

@@ -8,9 +8,10 @@ paths:
   /getFutureUserTickets:
     post:
       tags:
-        - tickets
+        - TicketsApi
       summary: Get future user tickets
       description: Retrieve future tickets for a user
+      operationId: getFutureUserTickets
       requestBody:
         required: true
         content:
@@ -33,7 +34,8 @@ paths:
   /addBaggage:
     post:
       tags:
-        - baggage
+        - BaggageApi
+      operationId: addBaggage
       summary: Add baggage
       description: Add baggage to a ticket
       requestBody:

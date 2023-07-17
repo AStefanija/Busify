@@ -33,7 +33,7 @@ public class TicketServiceImpl implements TicketService {
 
         return tickets
                 .stream()
-                .map(ticket -> UtilMapper.mapTicketToDto(ticket, passenger))
+                .map(UtilMapper::mapTicketToDto)
                 .collect(Collectors.toList());
     }
 }
