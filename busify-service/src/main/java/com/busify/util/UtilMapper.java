@@ -1,5 +1,7 @@
 package com.busify.util;
 
+import com.busify.model.Baggage;
+import com.busify.model.BaggageDto;
 import com.busify.model.Passenger;
 import com.busify.model.PassengerDto;
 import com.busify.model.Ticket;
@@ -12,9 +14,9 @@ import com.busify.model.UserDto;
  */
 public class UtilMapper {
 
-    public static TicketDto mapTicketToDto(Ticket ticket, Passenger passenger) {
+    public static TicketDto mapTicketToDto(Ticket ticket) {
 
-        PassengerDto passengerDto = mapToPassengerDto(passenger);
+        PassengerDto passengerDto = mapToPassengerDto(ticket.getPassenger());
 
         return TicketDto.builder()
                 .id(ticket.getId())
@@ -44,6 +46,13 @@ public class UtilMapper {
         return PassengerDto.builder()
                 .id(passenger.getId())
                 .user(userDto)
+                .build();
+    }
+
+    public static BaggageDto mapToBaggageDto(Baggage baggage) {
+
+        return BaggageDto.builder()
+                .id(baggage.getId())
                 .build();
     }
 }

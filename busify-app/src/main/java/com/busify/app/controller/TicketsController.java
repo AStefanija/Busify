@@ -1,6 +1,6 @@
 package com.busify.app.controller;
 
-import com.busify.app.util.ResponseFactory;
+import com.busify.app.util.ResponseConverter;
 import com.busify.codegen.api.GetFutureUserTicketsApi;
 import com.busify.codegen.model.GetFutureUserTicketsRequest;
 import com.busify.codegen.model.GetUserTicketsResponse;
@@ -42,7 +42,7 @@ public class TicketsController implements GetFutureUserTicketsApi {
 
         List<TicketDto> ticketDtoList = ticketService.getFutureTicketsForUser(user.get());
 
-        GetUserTicketsResponse response = ResponseFactory.createGetUserTicketsResponse(ticketDtoList);
+        GetUserTicketsResponse response = ResponseConverter.createGetUserTicketsResponse(ticketDtoList);
         return ResponseEntity.ok(response);
     }
 }

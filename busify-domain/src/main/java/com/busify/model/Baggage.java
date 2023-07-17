@@ -1,7 +1,6 @@
 package com.busify.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +8,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "Baggage")
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class Baggage {
 
@@ -31,4 +29,11 @@ public class Baggage {
     @Enumerated
     @Column(name = "Type")
     private BaggageType type;
+
+    public Baggage(Ticket ticket, float weight, float size, BaggageType type) {
+        this.ticket = ticket;
+        this.weight = weight;
+        this.size = size;
+        this.type = type;
+    }
 }
