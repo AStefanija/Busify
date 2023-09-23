@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from './components/Login';
 // import MainPage from "./components/MainPage";
-// import Register from './components/Register';
+import Register from './components/Register';
 // import Home from "./components/Home"
 // import Reservation from "./components/Reservation";
 // import Profile from "./components/Profile";
@@ -17,7 +17,7 @@ class App extends Component {
           <Routes>
             <Route path="/login" element={<Login />}/>
             {/*<Route path="/" element={<MainPage />} />*/}
-            {/*<Route path="/register" element={<Register />} />*/}
+            <Route path="/register" element={<Register />} />
             {/*<Route path="/home" element={<Home />}/>*/}
             {/*<Route path="/reservation" element={<Reservation />}/>*/}
             {/*<Route path="/profile" element={<Profile />}/>*/}
