@@ -4,7 +4,7 @@ import Login from './components/Login';
 // import MainPage from "./components/MainPage";
 import Register from './components/Register';
 // import Home from "./components/Home"
-// import Reservation from "./components/Reservation";
+import Reservation from "./components/Reservation";
 import Profile from "./components/Profile";
 // import FutureTours from "./components/FutureTours";
 // import PastTours from "./components/PastTours";
@@ -19,7 +19,7 @@ class App extends Component {
             {/*<Route path="/" element={<MainPage />} />*/}
             <Route path="/register" element={<Register />} />
             {/*<Route path="/home" element={<Home />}/>*/}
-            {/*<Route path="/reservation" element={<Reservation />}/>*/}
+            <Route path="/reservation" element={<Reservation />}/>
             <Route path="/profile" element={<Profile />}/>
             {/*<Route path="/futureTours" element={<FutureTours />}/>*/}
             {/*<Route path="/pastTours" element={<PastTours />}/>*/}
