@@ -7,7 +7,7 @@ import Register from './components/Register';
 // import Reservation from "./components/Reservation";
 import Profile from "./components/Profile";
 import FutureTours from "./components/FutureTours";
-// import PastTours from "./components/PastTours";
+import PastTours from "./components/PastTours";
 // import Route_Review from "./components/Route_Review";
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
             {/*<Route path="/reservation" element={<Reservation />}/>*/}
             <Route path="/profile" element={<Profile />}/>
             <Route path="/futureTours" element={<FutureTours />}/>
-            {/*<Route path="/pastTours" element={<PastTours />}/>*/}
+            <Route path="/pastTours" element={<PastTours />}/>
             {/*<Route path="routeReviews" element={<Route_Review />}/>*/}
           </Routes>
 
